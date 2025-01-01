@@ -49,6 +49,9 @@ return {
         "vimdoc",
         "html",
         "css",
+        "javascript",
+        "typescript",
+        "tsx",
       },
     },
   },
@@ -63,10 +66,5 @@ return {
     config = function()
       require("nvim-ts-autotag").setup()
     end,
-  },
-  {
-    "mrcjkb/haskell-tools.nvim",
-    version = "^4", -- Recommended
-    lazy = false, -- This plugin is already lazy
   },
 }
