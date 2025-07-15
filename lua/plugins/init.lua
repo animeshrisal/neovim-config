@@ -20,6 +20,14 @@ return {
     end,
   },
   {
+    "nosduco/remote-sshfs.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    opts = {
+      -- Refer to the configuration section below
+      -- or leave empty for defaults
+    },
+  },
+  {
     "nvimtools/none-ls.nvim",
     dependencies = {
       "nvimtools/none-ls-extras.nvim",
@@ -31,14 +39,13 @@ return {
       ensure_installed = {
         "clangd",
         "clang-format",
-        "eslint-lsp",
-        "prettierd",
-        "docker-compose-language-server",
-        "dockerfile-language-server",
-        "typescript-language-server",
-        "rust-analyzer",
       },
     },
+  },
+  {
+    "mrcjkb/haskell-tools.nvim",
+    version = "^5", -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -48,10 +55,6 @@ return {
         "lua",
         "vimdoc",
         "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
       },
     },
   },
@@ -65,6 +68,7 @@ return {
     },
     config = function()
       require("nvim-ts-autotag").setup()
+      require("telescope").load_extension "remote-sshfs"
     end,
   },
 }
